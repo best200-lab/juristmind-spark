@@ -1,37 +1,69 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, ArrowRight } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useEffect, useState } from "react";
+
+interface NewsItem {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  image_url: string;
+  gradient: string;
+  published_date: string;
+  created_at: string;
+  updated_at: string;
+  is_published: boolean;
+}
 
 const NewsSection = () => {
-  const newsItems = [
-    {
-      id: 1,
-      title: "JURIST MIND AI 4.0",
-      description: "JURIST MIND 4.0 is the most intelligent model in the world. It includes native tool use and real-time search integration, and is available now to Supabase and enterprise customers.",
-      date: "JULY 08, 2024",
-      category: "AI RELEASE",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop&crop=center",
-      gradient: "from-blue-600 to-purple-600"
-    },
-    {
-      id: 2,
-      title: "Announcing JURIST MIND for Government",
-      description: "We are excited to announce JURIST MIND For Government — a suite of premier AI products available for US limited States government customers.",
-      date: "JULY 04, 2024",
-      category: "GOVERNMENT",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&crop=center",
-      gradient: "from-indigo-600 to-blue-600"
-    },
-    {
-      id: 3,
-      title: "JURIST MIND 3 Beta — The Age of Reasoning Agents",
-      description: "We are thrilled to unveil an early preview of JURIST MIND 3, our most advanced model yet, blending superior reasoning with extensive pretrained knowledge.",
-      date: "FEBRUARY 10, 2024",
-      category: "AI BETA",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop&crop=center",
-      gradient: "from-red-600 to-orange-600"
-    }
-  ];
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke('news', {
+          method: 'GET'
+        });
+
+        if (error) {
+          console.error('Error fetching news:', error);
+          return;
+        }
+
+        setNewsItems(data || []);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: '2-digit'
+    }).toUpperCase();
+  };
+
+  if (loading) {
+    return (
+      <section className="py-24 bg-background">
+        <div className="container px-6">
+          <div className="flex items-center justify-center">
+            <div className="text-2xl font-bold">Loading news...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-24 bg-background">
@@ -58,7 +90,7 @@ const NewsSection = () => {
                   className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-90`}
                 />
                 <img 
-                  src={item.image} 
+                  src={item.image_url} 
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -82,7 +114,7 @@ const NewsSection = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="w-4 h-4" />
-                    <span className="font-bold">{item.date}</span>
+                    <span className="font-bold">{formatDate(item.published_date)}</span>
                   </div>
                   <Button variant="ghost" size="sm" className="font-bold text-accent hover:text-accent-foreground">
                     READ
