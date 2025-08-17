@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 220 25% 8%;
-    --foreground: 220 15% 95%;
+    /* Core Colors - Ultra Professional Black/White */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 20% 12%;
-    --card-foreground: 220 15% 95%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 220 15% 95%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Primary - Deep Professional Blue */
-    --primary: 220 85% 35%;
-    --primary-foreground: 220 15% 98%;
-    --primary-glow: 220 85% 55%;
+    /* Primary - Pure White */
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 0 0% 90%;
 
-    /* Secondary - Rich Purple for Energy */
-    --secondary: 265 85% 45%;
-    --secondary-foreground: 220 15% 98%;
-    --secondary-glow: 265 85% 65%;
+    /* Secondary - Dark Gray */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 0 0% 20%;
 
-    /* Accent - Electric Highlight */
-    --accent: 195 100% 50%;
-    --accent-foreground: 220 25% 8%;
-    --accent-glow: 195 100% 70%;
+    /* Accent - Electric Gold */
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --accent-glow: 45 100% 60%;
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 220 15% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 16%;
-    --ring: 220 85% 55%;
+    --border: 0 0% 20%;
+    --input: 0 0% 10%;
+    --ring: 0 0% 100%;
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(220 20% 15%) 100%);
+    /* Gradients - Bold Professional */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 90%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 20%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(45 100% 50%), hsl(0 0% 90%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 5% / 0.9), hsl(0 0% 10% / 0.9));
     
     /* Shadows with Brand Colors */
     --shadow-primary: 0 10px 40px -10px hsl(var(--primary) / 0.4);
@@ -151,6 +151,42 @@ All colors MUST be HSL.
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Ultra Bold Text Effects */
+  .text-ultra-bold {
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .text-block {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+  }
+
+  /* Countdown Animation */
+  .countdown-text {
+    font-weight: 900;
+    animation: countdown-pulse 2s ease-in-out infinite;
+  }
+
+  .countdown-text-delayed {
+    font-weight: 900;
+    animation: countdown-pulse 2s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  .countdown-text-delayed-2 {
+    font-weight: 900;
+    animation: countdown-pulse 2s ease-in-out infinite;
+    animation-delay: 1s;
+  }
 }
 
 @keyframes scale-in {
@@ -183,6 +219,17 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes countdown-pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px hsl(var(--accent) / 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px hsl(var(--accent) / 0.8);
   }
 }
 
