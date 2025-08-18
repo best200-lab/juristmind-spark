@@ -71,22 +71,19 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
-              <Link
+              <Button
                 key={item.name}
-                to={item.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-primary ${
-                  isActive(item.path)
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                }`}
+                variant={isActive(item.path) ? "default" : "ghost"}
+                size="sm"
+                asChild
+                className="relative font-medium transition-all duration-300"
               >
-                {item.name}
-                {isActive(item.path) && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-primary animate-scale-in" />
-                )}
-              </Link>
+                <Link to={item.path}>
+                  {item.name}
+                </Link>
+              </Button>
             ))}
           </div>
 
@@ -138,18 +135,18 @@ const Navbar = () => {
           <div className="md:hidden animate-fade-in">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 backdrop-blur-md rounded-lg mt-2 border border-border/20">
               {navItems.map((item) => (
-                <Link
+                <Button
                   key={item.name}
-                  to={item.path}
+                  variant={isActive(item.path) ? "default" : "ghost"}
+                  size="sm"
+                  asChild
+                  className="w-full justify-start font-medium"
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors duration-300 rounded-md ${
-                    isActive(item.path)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-accent/50"
-                  }`}
                 >
-                  {item.name}
-                </Link>
+                  <Link to={item.path}>
+                    {item.name}
+                  </Link>
+                </Button>
               ))}
               <div className="pt-2 border-t border-border/20">
                 {user ? (

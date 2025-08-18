@@ -118,6 +118,34 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Typing Animation */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end);
+  }
+
+  .typing-animation-delay {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(40, end) 0.5s both;
+  }
+
+  .typing-animation-delay-2 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4.5s steps(40, end) 1s both;
+  }
+
   /* Interactive Animations */
   .animate-scale-in {
     animation: scale-in 0.3s ease-out;

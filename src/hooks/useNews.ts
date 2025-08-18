@@ -9,6 +9,7 @@ export interface NewsItem {
   image_url: string;
   gradient: string;
   published_date: string;
+  author: string;
   created_at: string;
   updated_at: string;
   is_published: boolean;

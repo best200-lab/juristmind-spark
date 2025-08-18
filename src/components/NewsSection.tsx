@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight, User } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface NewsItem {
   id: string;
@@ -12,6 +13,7 @@ interface NewsItem {
   image_url: string;
   gradient: string;
   published_date: string;
+  author: string;
   created_at: string;
   updated_at: string;
   is_published: boolean;
@@ -111,14 +113,22 @@ const NewsSection = () => {
               </CardHeader>
               
               <CardContent className="pt-0">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
-                    <span className="font-bold">{formatDate(item.published_date)}</span>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4" />
+                      <span className="font-bold">{item.author}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-bold">{formatDate(item.published_date)}</span>
+                    </div>
                   </div>
-                  <Button variant="ghost" size="sm" className="font-bold text-accent hover:text-accent-foreground">
-                    READ
-                  </Button>
+                  <Link to={`/blog/${item.id}`}>
+                    <Button variant="ghost" size="sm" className="font-bold text-accent hover:text-accent-foreground">
+                      READ MORE
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

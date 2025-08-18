@@ -32,14 +32,14 @@ const HeroSection = () => {
           {/* Main Headline */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <h1 className="text-6xl md:text-8xl text-ultra-bold countdown-text bg-gradient-hero bg-clip-text text-transparent">
+           <h1 className="text-6xl md:text-8xl text-ultra-bold typing-animation bg-gradient-hero bg-clip-text text-transparent">
                 JURIST
               </h1>
-              <h1 className="text-6xl md:text-8xl text-ultra-bold countdown-text-delayed bg-gradient-accent bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-8xl text-ultra-bold typing-animation-delay bg-gradient-accent bg-clip-text text-transparent">
                 MIND
               </h1>
             </div>
-            <p className="text-xl md:text-2xl countdown-text-delayed-2 text-foreground max-w-3xl mx-auto leading-relaxed font-bold">
+            <p className="text-xl md:text-2xl typing-animation-delay-2 text-foreground max-w-3xl mx-auto leading-relaxed font-bold">
               Revolutionary <span className="text-block">AI-POWERED</span> legal assistant that transforms how legal professionals research, 
               analyze, and practice law with <span className="text-accent font-black">UNPARALLELED INTELLIGENCE</span> and precision.
             </p>

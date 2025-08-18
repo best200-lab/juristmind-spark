@@ -14,6 +14,7 @@ interface NewsItem {
   gradient?: string;
   published_date?: string;
   is_published?: boolean;
+  author?: string;
 }
 
 Deno.serve(async (req) => {
@@ -96,7 +97,8 @@ Deno.serve(async (req) => {
             image_url: newsData.image_url,
             gradient: newsData.gradient || 'from-blue-600 to-purple-600',
             published_date: newsData.published_date || new Date().toISOString().split('T')[0],
-            is_published: newsData.is_published ?? true
+            is_published: newsData.is_published ?? true,
+            author: newsData.author || 'Admin'
           }])
           .select()
           .single();
