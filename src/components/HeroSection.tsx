@@ -35,7 +35,7 @@ const HeroSection = () => {
            <h1 className="text-6xl md:text-8xl text-ultra-bold typing-animation bg-gradient-hero bg-clip-text text-transparent">
                 JURIST
               </h1>
-              <h1 className="text-6xl md:text-8xl text-ultra-bold typing-animation-delay bg-gradient-accent bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-8xl text-ultra-bold typing-animation-delay text-white">
                 MIND
               </h1>
             </div>
