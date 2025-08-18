@@ -86,11 +86,20 @@ const Auth = () => {
     });
 
     if (error) {
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
+      // Handle specific duplicate user errors
+      if (error.message.includes("already registered") || error.message.includes("already exists")) {
+        toast({
+          title: "Email Already Registered",
+          description: "This email is already registered. Please try logging in instead.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: error.message,
+          variant: "destructive",
+        });
+      }
     } else {
       toast({
         title: "Success",

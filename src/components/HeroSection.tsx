@@ -63,9 +63,11 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl" className="group">
-              Experience JURIST MIND
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button variant="hero" size="xl" className="group" asChild>
+              <a href="/auth?mode=signup">
+                Experience JURIST MIND
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <Button variant="outline" size="xl">
               Watch Demo

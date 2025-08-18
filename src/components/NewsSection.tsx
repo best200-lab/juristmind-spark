@@ -74,9 +74,11 @@ const NewsSection = () => {
           <h2 className="text-4xl md:text-6xl text-ultra-bold countdown-text">
             Latest <span className="text-block">NEWS</span>
           </h2>
-          <Button variant="outline" className="hidden md:flex">
-            VIEW ALL
-            <ArrowRight className="w-4 h-4" />
+          <Button variant="outline" className="hidden md:flex" asChild>
+            <a href="/blog">
+              VIEW ALL
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </Button>
         </div>
 
@@ -136,9 +138,11 @@ const NewsSection = () => {
         </div>
 
         <div className="text-center mt-12 md:hidden">
-          <Button variant="outline" size="lg">
-            VIEW ALL NEWS
-            <ArrowRight className="w-4 h-4" />
+          <Button variant="outline" size="lg" asChild>
+            <a href="/blog">
+              VIEW ALL NEWS
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </Button>
         </div>
       </div>

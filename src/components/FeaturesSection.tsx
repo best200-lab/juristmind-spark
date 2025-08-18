@@ -91,9 +91,11 @@ const FeaturesSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button variant="secondary" size="xl" className="group">
-            Explore All Features
-            <FileSearch className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          <Button variant="secondary" size="xl" className="group" asChild>
+            <a href="/features">
+              Explore All Features
+              <FileSearch className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
           </Button>
         </div>
       </div>
