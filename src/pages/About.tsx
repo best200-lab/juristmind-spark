@@ -39,7 +39,7 @@ const About = () => {
       name: "Oluwaseun Ogun",
       role: "CEO & Founder",
       description: "Seun Is the founder of Artificial Inteligence And privacy Lawyers, partner with some years of experience in corporate law.",
-      image: "https://pbs.twimg.com/profile_images/1650966849809444868/pyW-YSwK_400x400.jpg?w=400&h=400&fit=crop&crop=face"
+      image: "https://pbs.twimg.com/profile_images/1650966849809444868/pyW-YSwK_400x400.jpg"
     },
     {
       name: "Dr. Michael Chen",

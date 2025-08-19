@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MapPin, Clock, MessageSquare, Send, HeadphonesIcon } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -67,23 +68,41 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
 
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-    });
+      if (error) throw error;
 
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      subject: "",
-      message: "",
-      inquiryType: ""
-    });
-    setLoading(false);
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        subject: "",
+        message: "",
+        inquiryType: ""
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSupportTicket = () => {
+    // Open support ticket modal or redirect to support page
+    window.open('mailto:Ogunseun7@gmail.com?subject=Support Ticket Request&body=Please describe your issue:', '_blank');
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -256,18 +275,8 @@ const Contact = () => {
                     <p className="text-sm text-muted-foreground mb-3">
                       For urgent technical issues, contact our support team directly.
                     </p>
-                    <Button variant="outline" size="sm" className="w-full">
+                    <Button variant="outline" size="sm" className="w-full" onClick={handleSupportTicket}>
                       Open Support Ticket
-                    </Button>
-                  </div>
-                  
-                  <div className="p-4 bg-secondary/10 rounded-lg border border-secondary/20">
-                    <h4 className="font-semibold text-secondary mb-2">Sales Inquiry</h4>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      Ready to get started? Speak with our sales team.
-                    </p>
-                    <Button variant="outline" size="sm" className="w-full">
-                      Schedule Demo
                     </Button>
                   </div>
                 </CardContent>
@@ -298,13 +307,33 @@ const Contact = () => {
                     <h4 className="font-semibold">Is my data secure?</h4>
                     <p className="text-sm text-muted-foreground">
                       Absolutely. We use enterprise-grade security measures and comply 
-                      with all relevant data protection regulations.
+                      with all relevant data protection regulations including GDPR and CCPA.
                     </p>
                   </div>
-                  
-                  <Button variant="ghost" className="w-full mt-4">
-                    View All FAQs →
-                  </Button>
+
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">What types of legal documents can AI analyze?</h4>
+                    <p className="text-sm text-muted-foreground">
+                      JURIST MIND can analyze contracts, legal briefs, case law, statutes, 
+                      regulations, and virtually any legal document format.
+                    </p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">Do you offer API integration?</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Yes, we provide robust API access for enterprise clients to integrate 
+                      our AI capabilities directly into their existing legal systems.
+                    </p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">What is your pricing model?</h4>
+                    <p className="text-sm text-muted-foreground">
+                      We offer flexible pricing plans based on usage and team size, 
+                      starting from individual practitioners to enterprise solutions.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </div>
