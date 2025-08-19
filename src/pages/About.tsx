@@ -36,10 +36,10 @@ const About = () => {
 
   const team = [
     {
-      name: "Sarah Johnson",
-      role: "CEO & Co-Founder",
-      description: "Former BigLaw partner with 15+ years experience in corporate law.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b100?w=400&h=400&fit=crop&crop=face"
+      name: "Oluwaseun Ogun",
+      role: "CEO & Founder",
+      description: "Seun Is the founder of Artificial Inteligence And privacy Lawyers, partner with some years of experience in corporate law.",
+      image: "https://pbs.twimg.com/profile_images/1650966849809444868/pyW-YSwK_400x400.jpg?w=400&h=400&fit=crop&crop=face"
     },
     {
       name: "Dr. Michael Chen",
