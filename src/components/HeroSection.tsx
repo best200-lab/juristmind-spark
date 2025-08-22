@@ -76,19 +76,19 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Stats */}
+          {/* Stats with Countdown Animation */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">99.8%</div>
-              <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+              <div className="text-4xl font-black text-primary countdown-text">99.8%</div>
+              <div className="text-sm text-muted-foreground font-medium">Accuracy Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary">10x</div>
-              <div className="text-sm text-muted-foreground">Faster Research</div>
+              <div className="text-4xl font-black text-secondary countdown-text-delayed">10x</div>
+              <div className="text-sm text-muted-foreground font-medium">Faster Research</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent">24/7</div>
-              <div className="text-sm text-muted-foreground">Availability</div>
+              <div className="text-4xl font-black text-accent countdown-text-delayed-2">24/7</div>
+              <div className="text-sm text-muted-foreground font-medium">Availability</div>
             </div>
           </div>
         </div>

@@ -8,25 +8,25 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Core Colors - Professional White & Blue */
+    /* Core Colors - Sparkling White & Deep Professional Blue */
     --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
+    --foreground: 220 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 220 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 220 25% 15%;
 
-    /* Primary - Professional Blue */
-    --primary: 213 94% 55%;
+    /* Primary - Deep Professional Blue */
+    --primary: 213 100% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 213 94% 65%;
+    --primary-glow: 213 100% 55%;
 
-    /* Secondary - Darker Blue */
-    --secondary: 220 45% 35%;
+    /* Secondary - Deep Dark Blue */
+    --secondary: 220 60% 25%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 220 45% 45%;
+    --secondary-glow: 220 60% 35%;
 
     /* Accent - Light Blue */
     --accent: 200 100% 50%;
@@ -45,18 +45,23 @@ All colors MUST be HSL.
 
     --radius: 1rem;
 
-    /* Gradients - Professional Style */
-    --gradient-primary: linear-gradient(135deg, hsl(213 94% 55%), hsl(220 45% 35%));
-    --gradient-secondary: linear-gradient(135deg, hsl(220 45% 35%), hsl(200 100% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(213 94% 55%), hsl(220 45% 35%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(213 30% 98%));
-    --gradient-bg: linear-gradient(135deg, hsl(0 0% 100%), hsl(213 15% 97%));
+    /* Gradients - Deep Professional Style */
+    --gradient-primary: linear-gradient(135deg, hsl(213 100% 45%), hsl(220 60% 25%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 60% 25%), hsl(213 100% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(213 100% 45%), hsl(220 60% 25%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(213 20% 98%));
+    --gradient-bg: linear-gradient(135deg, hsl(0 0% 100%), hsl(213 10% 99%));
     
-    /* Shadows - Professional */
-    --shadow-primary: 0 10px 40px -15px hsl(213 94% 55% / 0.2);
-    --shadow-secondary: 0 10px 40px -15px hsl(220 45% 35% / 0.2);
+    /* Glossy White Effects */
+    --white-sparkle: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --white-glossy: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 97%) 50%, hsl(0 0% 100%) 100%);
+    
+    /* Shadows - Deep Professional */
+    --shadow-primary: 0 10px 40px -15px hsl(213 100% 45% / 0.3);
+    --shadow-secondary: 0 10px 40px -15px hsl(220 60% 25% / 0.3);
     --shadow-accent: 0 10px 40px -15px hsl(200 100% 50% / 0.2);
-    --shadow-elegant: 0 20px 50px -15px hsl(213 50% 50% / 0.1);
+    --shadow-elegant: 0 20px 50px -15px hsl(213 70% 40% / 0.15);
+    --shadow-glossy: 0 8px 32px -8px hsl(0 0% 0% / 0.1), 0 0 0 1px hsl(0 0% 100% / 0.05);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
