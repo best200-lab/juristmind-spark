@@ -1,51 +1,66 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Scale, Zap } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import professionalPerson from "@/assets/professional-person.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-bg">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero/20" />
-      </div>
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse" />
-        <div className="absolute bottom-32 right-32 w-48 h-48 bg-secondary/20 rounded-full blur-xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-accent/20 rounded-full blur-xl animate-pulse delay-500" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container px-6 text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-card border border-accent/30 text-sm font-medium">
-            <Zap className="w-4 h-4 text-accent" />
-            <span>Powered by Advanced AI</span>
-          </div>
-
-          {/* Main Headline */}
-          <div className="space-y-6">
-            <div className="space-y-2">
-           <h1 className="text-6xl md:text-8xl text-ultra-bold typing-animation bg-gradient-hero bg-clip-text text-transparent">
-                JURIST
-              </h1>
-              <h1 className="text-6xl md:text-8xl text-ultra-bold typing-animation-delay text-white">
-                MIND
-              </h1>
+    <section className="relative min-h-screen bg-white">
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="space-y-8">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary">
+              <Zap className="w-4 h-4" />
+              <span>Powered by Advanced AI</span>
             </div>
-            <p className="text-xl md:text-2xl typing-animation-delay-2 text-foreground max-w-3xl mx-auto leading-relaxed font-bold">
-              Revolutionary <span className="text-block">AI-POWERED</span> legal assistant that transforms how legal professionals research, 
-              analyze, and practice law with <span className="text-accent font-black">UNPARALLELED INTELLIGENCE</span> and precision.
-            </p>
+
+            {/* Main Headline */}
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <h1 className="text-5xl md:text-7xl font-black text-primary leading-tight">
+                  JURIST
+                </h1>
+                <h1 className="text-5xl md:text-7xl font-black text-secondary leading-tight">
+                  MIND
+                </h1>
+              </div>
+              <p className="text-lg md:text-xl text-foreground max-w-2xl leading-relaxed">
+                Revolutionary <span className="text-primary font-bold">AI-POWERED</span> legal assistant that transforms how legal professionals research, 
+                analyze, and practice law with <span className="text-secondary font-bold">UNPARALLELED INTELLIGENCE</span> and precision.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <Button variant="default" size="xl" className="group" asChild>
+                <a href="/auth?mode=signup">
+                  Experience JURIST MIND
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+              <Button variant="outline" size="xl">
+                Watch Demo
+              </Button>
+            </div>
           </div>
 
-          {/* Feature Icons */}
+          {/* Professional Image */}
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+              <img 
+                src={professionalPerson} 
+                alt="Professional legal expert" 
+                className="w-full h-[600px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+            </div>
+          </div>
+        </div>
+
+        
+        {/* Feature Icons & Stats */}
+        <div className="mt-16 space-y-12">
           <div className="flex items-center justify-center gap-8 py-6">
             <div className="flex items-center gap-2 text-primary">
               <Brain className="w-6 h-6" />
@@ -61,31 +76,18 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl" className="group" asChild>
-              <a href="/auth?mode=signup">
-                Experience JURIST MIND
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-            <Button variant="outline" size="xl">
-              Watch Demo
-            </Button>
-          </div>
-
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-glow">99.8%</div>
+              <div className="text-3xl font-bold text-primary">99.8%</div>
               <div className="text-sm text-muted-foreground">Accuracy Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary-glow">10x</div>
+              <div className="text-3xl font-bold text-secondary">10x</div>
               <div className="text-sm text-muted-foreground">Faster Research</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent-glow">24/7</div>
+              <div className="text-3xl font-bold text-accent">24/7</div>
               <div className="text-sm text-muted-foreground">Availability</div>
             </div>
           </div>

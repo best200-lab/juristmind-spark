@@ -8,30 +8,30 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Core Colors - Modern AI Interface */
-    --background: 245 45% 97%;
-    --foreground: 225 15% 15%;
+    /* Core Colors - Professional White & Blue */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 225 15% 15%;
+    --card-foreground: 220 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 225 15% 15%;
+    --popover-foreground: 220 15% 20%;
 
-    /* Primary - Modern Purple */
-    --primary: 250 100% 65%;
+    /* Primary - Professional Blue */
+    --primary: 213 94% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 250 100% 75%;
+    --primary-glow: 213 94% 65%;
 
-    /* secondary - Soft Blue */
-    --secondary: 210 100% 60%;
+    /* Secondary - Darker Blue */
+    --secondary: 220 45% 35%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 210 100% 70%;
+    --secondary-glow: 220 45% 45%;
 
-    /* Accent - Vibrant Pink */
-    --accent: 310 100% 65%;
+    /* Accent - Light Blue */
+    --accent: 200 100% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 310 100% 75%;
+    --accent-glow: 200 100% 60%;
 
     --muted: 225 15% 95%;
     --muted-foreground: 225 10% 50%;
@@ -45,18 +45,18 @@ All colors MUST be HSL.
 
     --radius: 1rem;
 
-    /* Gradients - Modern AI Style */
-    --gradient-primary: linear-gradient(135deg, hsl(250 100% 65%), hsl(210 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(210 100% 60%), hsl(310 100% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(250 100% 65%), hsl(210 100% 60%), hsl(310 100% 65%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.9), hsl(250 20% 98% / 0.9));
-    --gradient-bg: linear-gradient(135deg, hsl(245 45% 97%), hsl(250 30% 95%));
+    /* Gradients - Professional Style */
+    --gradient-primary: linear-gradient(135deg, hsl(213 94% 55%), hsl(220 45% 35%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 45% 35%), hsl(200 100% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(213 94% 55%), hsl(220 45% 35%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(213 30% 98%));
+    --gradient-bg: linear-gradient(135deg, hsl(0 0% 100%), hsl(213 15% 97%));
     
-    /* Shadows with Modern Colors */
-    --shadow-primary: 0 10px 40px -15px hsl(250 100% 65% / 0.3);
-    --shadow-secondary: 0 10px 40px -15px hsl(210 100% 60% / 0.3);
-    --shadow-accent: 0 10px 40px -15px hsl(310 100% 65% / 0.3);
-    --shadow-elegant: 0 20px 50px -15px hsl(250 50% 50% / 0.15);
+    /* Shadows - Professional */
+    --shadow-primary: 0 10px 40px -15px hsl(213 94% 55% / 0.2);
+    --shadow-secondary: 0 10px 40px -15px hsl(220 45% 35% / 0.2);
+    --shadow-accent: 0 10px 40px -15px hsl(200 100% 50% / 0.2);
+    --shadow-elegant: 0 20px 50px -15px hsl(213 50% 50% / 0.1);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
