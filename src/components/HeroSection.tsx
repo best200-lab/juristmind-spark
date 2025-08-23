@@ -4,7 +4,7 @@ import professionalPerson from "@/assets/professional-person.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-white">
+    <section className="relative min-h-screen bg-glossy-white">
       <div className="container mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -50,7 +50,7 @@ const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
               <img 
                 src={professionalPerson} 
-                alt="Professional legal expert" 
+                alt="Professional legal expert with law books and scales of justice" 
                 className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
