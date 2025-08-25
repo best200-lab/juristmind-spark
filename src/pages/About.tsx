@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Target, Lightbulb, Award, ArrowRight, Brain, Scale, Zap } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const About = () => {
+  const scrollRef = useScrollReveal();
+  
   const values = [
     {
       icon: Brain,
@@ -56,7 +59,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-bg">
+    <div ref={scrollRef} className="min-h-screen bg-gradient-bg">
       <Navbar />
       
       {/* Hero Section */}
@@ -67,17 +70,17 @@ const About = () => {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="outline" className="mb-6 border-primary/20 text-primary">
+          <div className="text-center max-w-4xl mx-auto scroll-reveal">
+            <Badge variant="outline" className="mb-6 border-primary/20 text-primary font-universal">
               About JURIST MIND
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 font-universal">
               Revolutionizing Legal Practice with{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Artificial Intelligence
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground mb-8 font-universal">
               We're on a mission to democratize legal intelligence, making advanced AI-powered 
               legal research and analysis accessible to every legal professional.
             </p>
@@ -90,11 +93,13 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+              <div key={index} className={`text-center group scroll-reveal ${
+                index % 2 === 0 ? 'scroll-reveal-left' : 'scroll-reveal-right'
+              }`}>
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300 font-universal">
                   {stat.number}
                 </div>
-                <div className="text-muted-foreground">{stat.label}</div>
+                <div className="text-muted-foreground font-universal">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -105,30 +110,30 @@ const About = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <div className="scroll-reveal">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-universal">
                 Our Story
               </h2>
               <div className="space-y-6 text-muted-foreground">
-                <p>
+                <p className="font-universal">
                   Founded in 2024 by a team of legal experts and AI researchers, JURIST MIND was born 
                   from a simple observation: legal professionals spend too much time on research and 
                   not enough time on strategy and client service.
                 </p>
-                <p>
+                <p className="font-universal">
                   Having worked in top-tier law firms, our founders experienced firsthand the challenges 
                   of managing overwhelming caseloads while maintaining the highest standards of legal analysis. 
                   They envisioned a future where AI could handle the heavy lifting of legal research, 
                   allowing lawyers to focus on what they do best.
                 </p>
-                <p>
+                <p className="font-universal">
                   Today, JURIST MIND serves hundreds of law firms worldwide, from solo practitioners 
                   to Am Law 100 firms, helping them work more efficiently and deliver better outcomes 
                   for their clients.
                 </p>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative scroll-reveal-right">
               <div className="aspect-square bg-gradient-card rounded-2xl p-8 flex items-center justify-center">
                 <div className="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center">
                   <Brain className="w-16 h-16 text-foreground" />
@@ -142,24 +147,26 @@ const About = () => {
       {/* Values Section */}
       <section className="py-20 bg-card/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-16 scroll-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-universal">
               Our Values
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-universal">
               The principles that guide everything we do
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="bg-card/60 backdrop-blur-sm border-border/20 hover:shadow-elegant transition-all duration-300 group">
+              <Card key={index} className={`bg-card/60 backdrop-blur-sm border-border/20 hover:shadow-elegant transition-all duration-300 group scroll-reveal ${
+                index % 3 === 0 ? '' : index % 3 === 1 ? 'scroll-reveal-left' : 'scroll-reveal-right'
+              }`}>
                 <CardContent className="p-8 text-center">
                   <div className={`w-16 h-16 ${value.color} mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <value.icon className="w-full h-full" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 font-universal">{value.title}</h3>
+                  <p className="text-muted-foreground font-universal">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -170,18 +177,20 @@ const About = () => {
       {/* Team Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-16 scroll-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-universal">
               Meet Our Team
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-universal">
               A diverse group of legal experts, AI researchers, and technology leaders
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="bg-card/60 backdrop-blur-sm border-border/20 hover:shadow-elegant transition-all duration-300 group overflow-hidden">
+              <Card key={index} className={`bg-card/60 backdrop-blur-sm border-border/20 hover:shadow-elegant transition-all duration-300 group overflow-hidden scroll-reveal ${
+                index % 3 === 0 ? '' : index % 3 === 1 ? 'scroll-reveal-left' : 'scroll-reveal-right'
+              }`}>
                 <div className="aspect-square overflow-hidden">
                   <img 
                     src={member.image} 
@@ -190,9 +199,9 @@ const About = () => {
                   />
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                  <p className="text-primary font-medium mb-3">{member.role}</p>
-                  <p className="text-muted-foreground text-sm">{member.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 font-universal">{member.name}</h3>
+                  <p className="text-primary font-medium mb-3 font-universal">{member.role}</p>
+                  <p className="text-muted-foreground text-sm font-universal">{member.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -204,20 +213,20 @@ const About = () => {
       <section className="py-20 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 bg-background/20" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+          <div className="text-center scroll-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground font-universal">
               Ready to Transform Your Legal Practice?
             </h2>
-            <p className="text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-8 max-w-2xl mx-auto font-universal">
               Join hundreds of legal professionals who are already experiencing 
               the future of legal AI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90">
+              <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90 font-universal">
                 Start Free Trial
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" size="lg" className="border-background/20 text-foreground hover:bg-background/10">
+              <Button variant="outline" size="lg" className="border-background/20 text-foreground hover:bg-background/10 font-universal">
                 Schedule Demo
               </Button>
             </div>

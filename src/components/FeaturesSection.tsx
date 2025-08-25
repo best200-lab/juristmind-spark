@@ -8,6 +8,7 @@ import {
   TrendingUp, 
   Users 
 } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const features = [
   {
@@ -49,18 +50,20 @@ const features = [
 ];
 
 const FeaturesSection = () => {
+  const scrollRef = useScrollReveal();
+
   return (
-    <section className="py-24 px-6">
+    <section ref={scrollRef} className="py-24 px-6">
       <div className="container max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 scroll-reveal">
+          <h2 className="text-4xl md:text-5xl font-bold font-universal">
             Revolutionizing Legal Practice with{" "}
             <span className="bg-gradient-secondary bg-clip-text text-transparent">
               AI Intelligence
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground font-universal">
             Discover how JURIST MIND transforms every aspect of legal work through 
             cutting-edge artificial intelligence and deep legal expertise.
           </p>
@@ -73,14 +76,16 @@ const FeaturesSection = () => {
             return (
               <Card 
                 key={index} 
-                className="p-8 bg-gradient-card border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-elegant group"
+                className={`p-8 bg-gradient-card border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-elegant group scroll-reveal ${
+                  index % 3 === 0 ? '' : index % 3 === 1 ? 'scroll-reveal-left' : 'scroll-reveal-right'
+                }`}
               >
                 <div className="space-y-4">
                   <div className={`w-12 h-12 rounded-lg bg-background/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className={`w-6 h-6 ${feature.color}`} />
                   </div>
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="text-xl font-semibold font-universal">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed font-universal">
                     {feature.description}
                   </p>
                 </div>
@@ -90,8 +95,8 @@ const FeaturesSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <Button variant="secondary" size="xl" className="group" asChild>
+        <div className="text-center scroll-reveal-scale">
+          <Button variant="secondary" size="xl" className="group font-universal" asChild>
             <a href="/features">
               Explore All Features
               <FileSearch className="w-5 h-5 group-hover:scale-110 transition-transform" />
