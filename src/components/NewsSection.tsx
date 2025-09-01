@@ -71,7 +71,7 @@ const NewsSection = () => {
   }
 
   return (
-    <section ref={scrollRef} className="py-24 bg-background">
+    <section ref={scrollRef} className="py-24 bg-gradient-subtle border-t border-border/20">
       <div className="container px-6">
         <div className="flex items-center justify-between mb-12 scroll-reveal">
           <h2 className="text-4xl md:text-6xl text-ultra-bold countdown-text font-universal">
