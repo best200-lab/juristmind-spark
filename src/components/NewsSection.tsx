@@ -71,12 +71,19 @@ const NewsSection = () => {
   }
 
   return (
-    <section ref={scrollRef} className="py-24 bg-gradient-subtle border-t border-border/20">
+    <section ref={scrollRef} className="py-24 bg-gradient-subtle border-t-2 border-accent/30">
       <div className="container px-6">
-        <div className="flex items-center justify-between mb-12 scroll-reveal">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 scroll-reveal">
           <h2 className="text-4xl md:text-6xl text-ultra-bold countdown-text font-universal">
-            Latest <span className="text-block">NEWS</span>
+            Latest <span className="bg-gradient-secondary bg-clip-text text-transparent">LEGAL NEWS</span>
           </h2>
+          <p className="text-xl text-muted-foreground font-universal">
+            Stay updated with the latest developments in legal technology and JURIST MIND innovations
+          </p>
+        </div>
+        
+        <div className="flex items-center justify-between mb-12 scroll-reveal">
           <Button variant="outline" className="hidden md:flex font-universal" asChild>
             <a href="/blog">
               VIEW ALL
