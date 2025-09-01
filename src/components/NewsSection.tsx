@@ -71,15 +71,18 @@ const NewsSection = () => {
   }
 
   return (
-    <section ref={scrollRef} className="py-24 bg-gradient-subtle border-t-2 border-accent/30">
+    <section ref={scrollRef} className="py-32 bg-gradient-subtle border-t-4 border-accent/40 shadow-elegant">
       <div className="container px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl text-ultra-bold countdown-text font-universal">
+        <div className="text-center max-w-4xl mx-auto mb-20 space-y-6 scroll-reveal">
+          <div className="inline-block px-6 py-2 bg-accent/10 border-2 border-accent/30 rounded-full mb-4">
+            <span className="text-accent font-black font-universal text-sm tracking-wider">BREAKING UPDATES</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl text-ultra-bold countdown-text font-universal">
             Latest <span className="bg-gradient-secondary bg-clip-text text-transparent">LEGAL NEWS</span>
           </h2>
-          <p className="text-xl text-muted-foreground font-universal">
-            Stay updated with the latest developments in legal technology and JURIST MIND innovations
+          <p className="text-xl text-muted-foreground font-universal max-w-2xl mx-auto">
+            Stay ahead with cutting-edge legal technology insights and JURIST MIND breakthroughs
           </p>
         </div>
         
