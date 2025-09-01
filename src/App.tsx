@@ -11,6 +11,7 @@ import Privacy from "./pages/Privacy";
 import Auth from "./pages/Auth";
 import Blog from "./pages/Blog";
 import BlogList from "./pages/BlogList";
+import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +30,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/:id" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

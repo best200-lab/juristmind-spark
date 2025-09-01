@@ -49,6 +49,33 @@ const features = [
   }
 ];
 
+const additionalFeatures = [
+  {
+    icon: FileSearch,
+    title: "Update Your Cases",
+    description: "Manage and track all your legal cases with real-time updates, deadlines, and progress monitoring.",
+    color: "text-primary"
+  },
+  {
+    icon: MessageSquare,
+    title: "Legal Diary & Calendar",
+    description: "Never miss important dates with our intelligent legal diary that tracks court dates, filing deadlines, and appointments.",
+    color: "text-secondary"
+  },
+  {
+    icon: Users,
+    title: "Connect with Lawyers",
+    description: "Build your professional network by connecting with lawyers, sharing insights, and collaborating on cases.",
+    color: "text-accent"
+  },
+  {
+    icon: TrendingUp,
+    title: "Legal Marketplace",
+    description: "Buy and sell legal documents, templates, briefs, and other legal materials in our secure marketplace.",
+    color: "text-primary-glow"
+  }
+];
+
 const FeaturesSection = () => {
   const scrollRef = useScrollReveal();
 
@@ -69,7 +96,7 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
+        {/* Core Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -86,6 +113,43 @@ const FeaturesSection = () => {
                   </div>
                   <h3 className="text-xl font-semibold font-universal">{feature.title}</h3>
                   <p className="text-muted-foreground leading-relaxed font-universal">
+                    {feature.description}
+                  </p>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Additional Features Section */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 scroll-reveal">
+          <h3 className="text-3xl md:text-4xl font-bold font-universal">
+            Advanced Legal{" "}
+            <span className="bg-gradient-secondary bg-clip-text text-transparent">
+              Management Tools
+            </span>
+          </h3>
+          <p className="text-lg text-muted-foreground font-universal">
+            Complete legal practice management with marketplace integration - go beyond traditional case management.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {additionalFeatures.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <Card 
+                key={index} 
+                className={`p-6 bg-gradient-card border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-elegant group scroll-reveal ${
+                  index % 4 === 0 ? '' : index % 4 === 1 ? 'scroll-reveal-left' : index % 4 === 2 ? 'scroll-reveal-right' : 'scroll-reveal-scale'
+                }`}
+              >
+                <div className="space-y-3">
+                  <div className={`w-10 h-10 rounded-lg bg-background/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className={`w-5 h-5 ${feature.color}`} />
+                  </div>
+                  <h4 className="text-lg font-semibold font-universal">{feature.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed font-universal">
                     {feature.description}
                   </p>
                 </div>

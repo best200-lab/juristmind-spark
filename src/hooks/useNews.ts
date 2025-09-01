@@ -10,6 +10,7 @@ export interface NewsItem {
   gradient: string;
   published_date: string;
   author: string;
+  blog_body?: string;
   created_at: string;
   updated_at: string;
   is_published: boolean;
