@@ -26,18 +26,24 @@ const NewsSection = () => {
   const [loading, setLoading] = useState(true);
   const scrollRef = useScrollReveal();
 
+  console.log('NewsSection: Rendering with loading:', loading, 'newsItems count:', newsItems.length);
+
   useEffect(() => {
     const fetchNews = async () => {
+      console.log('NewsSection: Starting to fetch news...');
       try {
         const { data, error } = await supabase.functions.invoke('news', {
           method: 'GET'
         });
+
+        console.log('NewsSection: Fetch result:', { data, error });
 
         if (error) {
           console.error('Error fetching news:', error);
           return;
         }
 
+        console.log('NewsSection: Setting news items:', data);
         setNewsItems(data || []);
       } catch (error) {
         console.error('Error fetching news:', error);
@@ -71,7 +77,7 @@ const NewsSection = () => {
   }
 
   return (
-    <section ref={scrollRef} className="py-32 bg-gradient-subtle border-t-4 border-accent/40 shadow-elegant">
+    <section ref={scrollRef} className="py-32 bg-gradient-bg border-t-4 border-accent/40 shadow-elegant">
       <div className="container px-6">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-20 space-y-6 scroll-reveal">
