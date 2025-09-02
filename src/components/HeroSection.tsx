@@ -15,7 +15,7 @@ const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary font-universal">
               <Zap className="w-4 h-4" />
-              <span>Powered by Advanced AI</span>
+              <span>The most Innovative Legal AI in Nigeria</span>
             </div>
 
             {/* Main Headline */}
