@@ -80,7 +80,7 @@ const NewsSection = () => {
     <section ref={scrollRef} className="py-32 bg-gradient-bg border-t-4 border-accent/40 shadow-elegant">
       <div className="container px-6">
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-20 space-y-6 scroll-reveal">
+        <div className="text-center max-w-4xl mx-auto mb-20 space-y-6">
           <div className="inline-block px-6 py-2 bg-accent/10 border-2 border-accent/30 rounded-full mb-4">
             <span className="text-accent font-black font-universal text-sm tracking-wider">BREAKING UPDATES</span>
           </div>
@@ -92,7 +92,7 @@ const NewsSection = () => {
           </p>
         </div>
         
-        <div className="flex items-center justify-between mb-12 scroll-reveal">
+        <div className="flex items-center justify-between mb-12">
           <Button variant="outline" className="hidden md:flex font-universal" asChild>
             <a href="/blog">
               VIEW ALL
@@ -105,9 +105,7 @@ const NewsSection = () => {
           {newsItems.map((item, index) => (
             <Card 
               key={item.id} 
-              className={`group hover:scale-105 transition-all duration-500 bg-card border-2 border-border hover:border-accent overflow-hidden scroll-reveal ${
-                index % 3 === 0 ? '' : index % 3 === 1 ? 'scroll-reveal-left' : 'scroll-reveal-right'
-              }`}
+              className="group hover:scale-105 transition-all duration-500 bg-card border-2 border-border hover:border-accent overflow-hidden"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative h-48 overflow-hidden">
@@ -158,7 +156,7 @@ const NewsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12 md:hidden scroll-reveal">
+        <div className="text-center mt-12 md:hidden">
           <Button variant="outline" size="lg" className="font-universal" asChild>
             <a href="/blog">
               VIEW ALL NEWS
