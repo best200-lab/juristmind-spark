@@ -12,6 +12,7 @@ const Footer = () => {
     { name: "Our Features", path: "/features" },
     { name: "Contact Us", path: "/contact" },
     { name: "Privacy Policy", path: "/privacy" },
+    { name: "Terms & Conditions", path: "/terms" },
   ];
 
   const socialLinks = [
