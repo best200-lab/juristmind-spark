@@ -90,11 +90,18 @@ const Contact = () => {
         message: "",
         inquiryType: ""
       });
-    } catch (error) {
-      console.error('Error sending email:', error);
+    } catch (error: any) {
+      console.error('Error sending contact form:', error);
+      
+      // More detailed error messaging
+      let errorMessage = "Failed to send message. Please try again later.";
+      if (error?.message) {
+        errorMessage = `Error: ${error.message}`;
+      }
+      
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
+        title: "Message Failed",
+        description: errorMessage,
         variant: "destructive"
       });
     } finally {
