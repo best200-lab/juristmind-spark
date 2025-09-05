@@ -22,6 +22,14 @@ const Navbar = () => {
     { name: "Terms & Conditions", path: "/terms" },
   ];
 
+  const authNavItems = [
+    { name: "Home", path: "/" },
+    { name: "Dashboard", path: "/dashboard" },
+    { name: "About Us", path: "/about" },
+    { name: "Our Features", path: "/features" },
+    { name: "Contact Us", path: "/contact" },
+  ];
+
   useEffect(() => {
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -73,7 +81,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
+            {(user ? authNavItems : navItems).map((item) => (
               <Button
                 key={item.name}
                 variant={isActive(item.path) ? "default" : "ghost"}
@@ -135,7 +143,7 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden animate-fade-in">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 backdrop-blur-md rounded-lg mt-2 border border-border/20">
-              {navItems.map((item) => (
+              {(user ? authNavItems : navItems).map((item) => (
                 <Button
                   key={item.name}
                   variant={isActive(item.path) ? "default" : "ghost"}

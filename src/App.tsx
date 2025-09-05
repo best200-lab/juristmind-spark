@@ -10,6 +10,9 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+import EditProfile from "./pages/EditProfile";
+import PublicProfile from "./pages/PublicProfile";
 import Blog from "./pages/Blog";
 import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
@@ -31,6 +34,9 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/u/:username" element={<PublicProfile />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
