@@ -108,6 +108,7 @@ export type Database = {
           github_url: string | null
           id: string
           is_public: boolean
+          is_verified: boolean
           linkedin_url: string | null
           location: string | null
           profession: string | null
@@ -127,6 +128,7 @@ export type Database = {
           github_url?: string | null
           id?: string
           is_public?: boolean
+          is_verified?: boolean
           linkedin_url?: string | null
           location?: string | null
           profession?: string | null
@@ -146,6 +148,7 @@ export type Database = {
           github_url?: string | null
           id?: string
           is_public?: boolean
+          is_verified?: boolean
           linkedin_url?: string | null
           location?: string | null
           profession?: string | null
