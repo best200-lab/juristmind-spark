@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Calendar, Copy, ArrowLeft, Globe, Github } from "lucide-react";
+import { ExternalLink, Calendar, Copy, ArrowLeft, Globe, Github, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -20,6 +20,7 @@ interface Profile {
   twitter_url?: string;
   linkedin_url?: string;
   github_url?: string;
+  is_verified?: boolean;
   created_at: string;
 }
 
@@ -35,6 +36,88 @@ const PublicProfile = () => {
       fetchProfile(username);
     }
   }, [username]);
+
+  // SEO: Add meta tags dynamically
+  useEffect(() => {
+    if (profile) {
+      const title = `${profile.full_name} (@${profile.username}) - Jurist Mind`;
+      const description = profile.bio ? 
+        `${profile.bio.substring(0, 155)}...` : 
+        `View ${profile.full_name}'s professional profile on Jurist Mind.`;
+      const imageUrl = profile.profile_image_url || '/default-avatar.png';
+      const profileUrl = `${window.location.origin}/u/${profile.username}`;
+
+      // Update title
+      document.title = title;
+
+      // Update or create meta tags
+      const updateMetaTag = (name: string, content: string) => {
+        let tag = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
+        if (!tag) {
+          tag = document.createElement('meta');
+          tag.name = name;
+          document.head.appendChild(tag);
+        }
+        tag.content = content;
+      };
+
+      const updatePropertyTag = (property: string, content: string) => {
+        let tag = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement;
+        if (!tag) {
+          tag = document.createElement('meta');
+          tag.setAttribute('property', property);
+          document.head.appendChild(tag);
+        }
+        tag.content = content;
+      };
+
+      // Basic meta tags
+      updateMetaTag('description', description);
+      updatePropertyTag('og:title', title);
+      updatePropertyTag('og:description', description);
+      updatePropertyTag('og:image', imageUrl);
+      updatePropertyTag('og:url', profileUrl);
+      updatePropertyTag('og:type', 'profile');
+      
+      // Twitter Cards
+      updateMetaTag('twitter:card', 'summary_large_image');
+      updateMetaTag('twitter:title', title);
+      updateMetaTag('twitter:description', description);
+      updateMetaTag('twitter:image', imageUrl);
+
+      // Canonical URL
+      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+      }
+      canonical.href = profileUrl;
+
+      // JSON-LD Schema
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": profile.full_name,
+        "image": imageUrl,
+        "url": profileUrl,
+        "sameAs": [
+          profile.website_url,
+          profile.twitter_url,
+          profile.linkedin_url,
+          profile.github_url
+        ].filter(Boolean)
+      };
+
+      let scriptTag = document.querySelector('script[type="application/ld+json"]');
+      if (!scriptTag) {
+        scriptTag = document.createElement('script');
+        scriptTag.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(scriptTag);
+      }
+      scriptTag.textContent = JSON.stringify(schema);
+    }
+  }, [profile]);
 
   const fetchProfile = async (profileUsername: string) => {
     try {
@@ -133,7 +216,12 @@ const PublicProfile = () => {
               </AvatarFallback>
             </Avatar>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">{profile.full_name}</h1>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <h1 className="text-4xl md:text-5xl font-bold">{profile.full_name}</h1>
+              {profile.is_verified && (
+                <CheckCircle className="w-8 h-8 text-blue-400 fill-current" />
+              )}
+            </div>
             <p className="text-xl text-white/80 mb-6">@{profile.username}</p>
             
             {profile.bio && (
