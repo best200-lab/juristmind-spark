@@ -24,6 +24,8 @@ interface Profile {
   twitter_url: string;
   linkedin_url: string;
   github_url: string;
+  facebook_url: string;
+  instagram_url: string;
 }
 
 const EditProfile = () => {
@@ -37,6 +39,8 @@ const EditProfile = () => {
     twitter_url: "",
     linkedin_url: "",
     github_url: "",
+    facebook_url: "",
+    instagram_url: "",
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -80,6 +84,8 @@ const EditProfile = () => {
           twitter_url: data.twitter_url || "",
           linkedin_url: data.linkedin_url || "",
           github_url: data.github_url || "",
+          facebook_url: data.facebook_url || "",
+          instagram_url: data.instagram_url || "",
         });
       }
     } catch (error: any) {
@@ -103,14 +109,14 @@ const EditProfile = () => {
       const fileName = `${user.id}-${Date.now()}.${fileExt}`;
 
       const { error: uploadError } = await supabase.storage
-        .from("profiles")
-        .upload(fileName, file, { upsert: true });
+        .from("avatars")
+        .upload(`${user.id}/${fileName}`, file, { upsert: true });
 
       if (uploadError) throw uploadError;
 
       const { data: { publicUrl } } = supabase.storage
-        .from("profiles")
-        .getPublicUrl(fileName);
+        .from("avatars")
+        .getPublicUrl(`${user.id}/${fileName}`);
 
       setProfile(prev => ({ ...prev, profile_image_url: publicUrl }));
       
@@ -164,6 +170,8 @@ const EditProfile = () => {
         twitter_url: profile.twitter_url || null,
         linkedin_url: profile.linkedin_url || null,
         github_url: profile.github_url || null,
+        facebook_url: profile.facebook_url || null,
+        instagram_url: profile.instagram_url || null,
       };
 
       const { error } = await supabase
@@ -337,6 +345,28 @@ const EditProfile = () => {
                       value={profile.linkedin_url}
                       onChange={(e) => setProfile(prev => ({ ...prev, linkedin_url: e.target.value }))}
                       placeholder="https://linkedin.com/in/username"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="facebook">Facebook</Label>
+                    <Input
+                      id="facebook"
+                      value={profile.facebook_url}
+                      onChange={(e) => setProfile(prev => ({ ...prev, facebook_url: e.target.value }))}
+                      placeholder="https://facebook.com/username"
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="instagram">Instagram</Label>
+                    <Input
+                      id="instagram"
+                      value={profile.instagram_url}
+                      onChange={(e) => setProfile(prev => ({ ...prev, instagram_url: e.target.value }))}
+                      placeholder="https://instagram.com/username"
                     />
                   </div>
                 </div>

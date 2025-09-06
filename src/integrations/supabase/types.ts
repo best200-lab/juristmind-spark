@@ -104,9 +104,11 @@ export type Database = {
           company: string | null
           cover_image_url: string | null
           created_at: string
+          facebook_url: string | null
           full_name: string
           github_url: string | null
           id: string
+          instagram_url: string | null
           is_public: boolean
           is_verified: boolean
           linkedin_url: string | null
@@ -124,9 +126,11 @@ export type Database = {
           company?: string | null
           cover_image_url?: string | null
           created_at?: string
+          facebook_url?: string | null
           full_name: string
           github_url?: string | null
           id?: string
+          instagram_url?: string | null
           is_public?: boolean
           is_verified?: boolean
           linkedin_url?: string | null
@@ -144,9 +148,11 @@ export type Database = {
           company?: string | null
           cover_image_url?: string | null
           created_at?: string
+          facebook_url?: string | null
           full_name?: string
           github_url?: string | null
           id?: string
+          instagram_url?: string | null
           is_public?: boolean
           is_verified?: boolean
           linkedin_url?: string | null

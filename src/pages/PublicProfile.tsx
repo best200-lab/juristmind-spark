@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Calendar, Copy, ArrowLeft, Globe, Github, CheckCircle } from "lucide-react";
+import { ExternalLink, Calendar, Copy, ArrowLeft, Globe, Github, CheckCircle, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -20,6 +20,8 @@ interface Profile {
   twitter_url?: string;
   linkedin_url?: string;
   github_url?: string;
+  facebook_url?: string;
+  instagram_url?: string;
   is_verified?: boolean;
   created_at: string;
 }
@@ -105,7 +107,9 @@ const PublicProfile = () => {
           profile.website_url,
           profile.twitter_url,
           profile.linkedin_url,
-          profile.github_url
+          profile.github_url,
+          profile.facebook_url,
+          profile.instagram_url
         ].filter(Boolean)
       };
 
@@ -253,7 +257,7 @@ const PublicProfile = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Social Links */}
-            {(profile.website_url || profile.twitter_url || profile.linkedin_url || profile.github_url) && (
+            {(profile.website_url || profile.twitter_url || profile.linkedin_url || profile.github_url || profile.facebook_url || profile.instagram_url) && (
               <Card className="shadow-elegant mb-8">
                 <CardContent className="py-8">
                   <h2 className="text-2xl font-bold mb-6 text-center">Connect With Me</h2>
@@ -325,7 +329,7 @@ const PublicProfile = () => {
                       </a>
                     )}
 
-                    {profile.github_url && (
+                     {profile.github_url && (
                       <a
                         href={profile.github_url}
                         target="_blank"
@@ -340,6 +344,48 @@ const PublicProfile = () => {
                             <div>
                               <h3 className="font-semibold">GitHub</h3>
                               <p className="text-sm text-muted-foreground">View my code</p>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </a>
+                    )}
+
+                    {profile.facebook_url && (
+                      <a
+                        href={profile.facebook_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group"
+                      >
+                        <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer">
+                          <CardContent className="flex items-center space-x-4 py-6">
+                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                              <Facebook className="w-6 h-6 text-blue-700" />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold">Facebook</h3>
+                              <p className="text-sm text-muted-foreground">Connect with me</p>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </a>
+                    )}
+
+                    {profile.instagram_url && (
+                      <a
+                        href={profile.instagram_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group"
+                      >
+                        <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer">
+                          <CardContent className="flex items-center space-x-4 py-6">
+                            <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center group-hover:bg-pink-200 transition-colors">
+                              <Instagram className="w-6 h-6 text-pink-700" />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold">Instagram</h3>
+                              <p className="text-sm text-muted-foreground">Follow my journey</p>
                             </div>
                           </CardContent>
                         </Card>
