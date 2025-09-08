@@ -32,14 +32,12 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
     });
 
-    // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+      (_event, session) => {
         setUser(session?.user ?? null);
       }
     );
@@ -67,18 +65,18 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 w-screen z-50 bg-background/95 backdrop-blur-md border-b border-border/20 overflow-x-hidden">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-  <div className="w-8 h-8 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-    <img src={Logo} alt="Jurist Mind Logo" className="w-full h-full object-cover" />
-  </div>
-  <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-    JURIST MIND
-  </span>
-</Link>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+              <img src={Logo} alt="Jurist Mind Logo" className="w-full h-full object-cover" />
+            </div>
+            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              JURIST MIND
+            </span>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
@@ -90,9 +88,7 @@ const Navbar = () => {
                 asChild
                 className="relative font-medium transition-all duration-300"
               >
-                <Link to={item.path}>
-                  {item.name}
-                </Link>
+                <Link to={item.path}>{item.name}</Link>
               </Button>
             ))}
           </div>
@@ -153,9 +149,7 @@ const Navbar = () => {
                   className="w-full justify-start font-medium"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link to={item.path}>
-                    {item.name}
-                  </Link>
+                  <Link to={item.path}>{item.name}</Link>
                 </Button>
               ))}
               <div className="pt-2 border-t border-border/20">
