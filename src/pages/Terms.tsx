@@ -22,7 +22,7 @@ const Terms = () => {
               Terms and Conditions
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-universal">
-              Please read these terms and conditions carefully before using our website and services.
+              Please read these terms and conditions carefully before using our website and services. By accessing or using our platform, you agree to be bound by these terms.
             </p>
             <p className="text-sm text-muted-foreground mt-4 font-universal">
               Last updated: {lastUpdated}
@@ -175,7 +175,7 @@ const Terms = () => {
                   </p>
                   <div className="flex items-center space-x-3 text-muted-foreground p-4 bg-card/50 rounded-lg border">
                     <Mail className="w-5 h-5 text-primary" />
-                    <span className="font-universal">contact@juristmind.ai</span>
+                    <span className="font-universal">contact@juristmind.com</span>
                   </div>
                 </div>
               </CardContent>

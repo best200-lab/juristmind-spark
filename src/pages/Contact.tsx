@@ -30,7 +30,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "contact@juristmind.ai",
+      details: "contact@juristmind.com",
       description: "Send us an email anytime",
       color: "text-primary"
     },
@@ -44,8 +44,8 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Office",
-      details: "San Francisco, CA",
-      description: "123 Innovation Drive, Suite 400",
+      details: "Lagos, Nigeria",
+      description: "No 1 Office Complex, Phase 3 LSDPC, Ogba, Lagos",
       color: "text-accent"
     },
     {
@@ -363,7 +363,7 @@ const Contact = () => {
           <div className="text-center mb-12 scroll-reveal">
             <h2 className="text-3xl font-bold mb-4 font-universal">Visit Our Office</h2>
             <p className="text-muted-foreground font-universal">
-              Located in the heart of San Francisco's tech district
+              Located in the heart of Lagos.
             </p>
           </div>
           
@@ -371,8 +371,8 @@ const Contact = () => {
             <div className="text-center">
               <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2 font-universal">JURIST MIND Headquarters</h3>
-              <p className="text-muted-foreground font-universal">123 Innovation Drive, Suite 400</p>
-              <p className="text-muted-foreground font-universal">San Francisco, CA 94105</p>
+              <p className="text-muted-foreground font-universal">Office Complex, Phase 3 LSDPC</p>
+              <p className="text-muted-foreground font-universal"> Ogba, Lagos, suit 1</p>
             </div>
           </div>
         </div>

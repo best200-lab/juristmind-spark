@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Scale, Zap } from "lucide-react";
-import professionalPerson from "@/assets/professional-person.jpg";
+import professionalPerson from "@/assets/professional-person.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const HeroSection = () => {
@@ -15,7 +15,7 @@ const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary font-universal">
               <Zap className="w-4 h-4" />
-              <span>The most Innovative Legal AI in Nigeria</span>
+              <span>#1 Legal Ai Platform with Deep search Functionality</span>
             </div>
 
             {/* Main Headline */}

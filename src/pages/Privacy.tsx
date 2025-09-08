@@ -242,15 +242,15 @@ const Privacy = () => {
               
               <div className="space-y-2">
                 <p className="font-medium">Privacy Officer</p>
-                <p className="text-sm text-muted-foreground">privacy@juristmind.ai</p>
+                <p className="text-sm text-muted-foreground">privacy@juristmind.com</p>
                 <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
               </div>
               
               <div className="pt-4">
                 <p className="text-sm text-muted-foreground">
                   JURIST MIND, Inc.<br />
-                  123 Innovation Drive, Suite 400<br />
-                  San Francisco, CA 94105
+                  Office Complex, Phase 3 LSDPC, Ogba<br />
+                  Lagos, Nigeria.
                 </p>
               </div>
             </CardContent>

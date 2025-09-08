@@ -45,10 +45,10 @@ const About = () => {
       image: "https://pbs.twimg.com/profile_images/1650966849809444868/pyW-YSwK_400x400.jpg"
     },
     {
-      name: "Dr. Michael Chen",
-      role: "CTO & Co-Founder",
-      description: "AI researcher with PhD from Stanford, former Google AI lead.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+      name: "Adeniran Samson",
+      role: "Co-Founder",
+      description: "Samson is a co founder of Jurist mind and a Diploma law graduate",
+      image: "https://pbs.twimg.com/profile_images/1962929871010594816/tw94NciO.jpg"
     },
     {
       name: "Emma Rodriguez",
@@ -82,7 +82,7 @@ const About = () => {
             </h1>
             <p className="text-xl text-muted-foreground mb-8 font-universal">
               We're on a mission to democratize legal intelligence, making advanced AI-powered 
-              legal research and analysis accessible to every legal professional.
+              legal research and analysis accessible to every legal professional and law students.
             </p>
           </div>
         </div>
@@ -114,24 +114,25 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-universal">
                 Our Story
               </h2>
-              <div className="space-y-6 text-muted-foreground">
-                <p className="font-universal">
-                  Founded in 2024 by a team of legal experts and AI researchers, JURIST MIND was born 
-                  from a simple observation: legal professionals spend too much time on research and 
-                  not enough time on strategy and client service.
-                </p>
-                <p className="font-universal">
-                  Having worked in top-tier law firms, our founders experienced firsthand the challenges 
-                  of managing overwhelming caseloads while maintaining the highest standards of legal analysis. 
-                  They envisioned a future where AI could handle the heavy lifting of legal research, 
-                  allowing lawyers to focus on what they do best.
-                </p>
-                <p className="font-universal">
-                  Today, JURIST MIND serves hundreds of law firms worldwide, from solo practitioners 
-                  to Am Law 100 firms, helping them work more efficiently and deliver better outcomes 
-                  for their clients.
-                </p>
-              </div>
+<div className="space-y-6 text-muted-foreground">
+  <p className="font-universal">
+    Jurist Mind began as an experimental project aimed at exploring how <b>AI intersects with law</b> — 
+    from the risks of privacy breaches to the ways AI systems handle user documents. 
+    What started as a learning journey quickly revealed deeper challenges within the legal tech space.
+  </p>
+  <p className="font-universal">
+    As these issues came to light, our mission evolved. Jurist Mind shifted from being just a research 
+    initiative to becoming a <b>solution-driven platform</b> designed to support lawyers and law students. 
+    Our focus is on identifying and closing the loopholes that threaten confidentiality, while building 
+    trust through innovation.
+  </p>
+  <p className="font-universal">
+    Today, Jurist Mind is dedicated to delivering <b>end-to-end AI services</b> with advanced, robust 
+    technology that ensures <b>maximum privacy and security</b>. By doing so, we empower legal professionals 
+    to work smarter, safer, and with greater confidence in the digital age.
+  </p>
+</div>
+
             </div>
             <div className="relative scroll-reveal-right">
               <div className="aspect-square bg-gradient-card rounded-2xl p-8 flex items-center justify-center">
@@ -223,11 +224,11 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90 font-universal">
-                Start Free Trial
+                Join Us Today
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button variant="outline" size="lg" className="border-background/20 text-foreground hover:bg-background/10 font-universal">
-                Schedule Demo
+                Start For Free
               </Button>
             </div>
           </div>

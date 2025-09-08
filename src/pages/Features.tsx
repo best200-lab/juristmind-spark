@@ -37,7 +37,7 @@ const Features = () => {
     {
       icon: MessageSquare,
       title: "Intelligent Legal Chat",
-      description: "Conversational AI that understands complex legal questions and provides detailed answers.",
+      description: "Conversational AI that understands complex legal questions and provides detailed answers that match users intent.",
       details: [
         "Natural language legal consultation",
         "Case strategy recommendations",
@@ -48,13 +48,13 @@ const Features = () => {
     },
     {
       icon: Shield,
-      title: "Compliance Monitoring",
-      description: "Automated compliance tracking and risk assessment for regulatory requirements.",
+      title: "Privacy Compliance & Security",
+      description: "We safeguard every conversation and document with robust encryption and privacy-first architecture..",
       details: [
-        "Real-time regulatory updates",
-        "Automated compliance checking",
-        "Risk assessment algorithms",
-        "Custom compliance frameworks"
+        "End-to-end encrypted conversations",
+        "Zero data sharing with third parties",
+        "Secure document handling and storage",
+        "User-controlled data access and retention"
       ],
       color: "text-accent"
     }
@@ -64,7 +64,7 @@ const Features = () => {
     {
       icon: Brain,
       title: "Machine Learning Insights",
-      description: "Predictive analytics for case outcomes and legal strategy optimization."
+      description: "Predictive analytics for case outcomes and legal strategy optimization. Just give us the full details"
     },
     {
       icon: Database,
@@ -96,7 +96,7 @@ const Features = () => {
   const pricingPlans = [
     {
       name: "Starter",
-      price: "$99",
+      price: "$30",
       period: "/month",
       description: "Perfect for solo practitioners and small firms",
       features: [
@@ -110,7 +110,7 @@ const Features = () => {
     },
     {
       name: "Professional",
-      price: "$299",
+      price: "$150",
       period: "/month",
       description: "Ideal for growing law firms",
       features: [
@@ -302,19 +302,15 @@ const Features = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               Experience the Future of Legal AI
             </h2>
-            <p className="text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
-              Start your free trial today and discover how JURIST MIND can 
-              transform your legal practice.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90">
-                Start Free Trial
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-background/20 text-foreground hover:bg-background/10">
-                Schedule Demo
-              </Button>
-            </div>
+            <a 
+  href="/auth" 
+  className="inline-block px-6 py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition"
+>
+  Start Your Free Trial
+</a>
+<p className="mt-3 text-muted-foreground">
+  Discover how <b>JURIST MIND</b> can transform your legal practice with smarter, faster, and more secure AI tools.
+</p>
           </div>
         </div>
       </section>

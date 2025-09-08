@@ -72,11 +72,11 @@ const CTASection = () => {
             </p>
             <div className="flex items-center justify-center gap-6 text-sm">
               <a 
-                href="mailto:hello@juristmind.ai" 
+                href="mailto:Info@juristmind.com" 
                 className="flex items-center gap-2 text-accent hover:text-accent-glow transition-colors font-universal"
               >
                 <Mail className="w-4 h-4" />
-                hello@juristmind.ai
+                Info@juristmind.com
               </a>
               <span className="text-muted-foreground">|</span>
               <span className="text-muted-foreground font-universal">1-800-JURIST-1</span>
