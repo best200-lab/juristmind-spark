@@ -26,21 +26,21 @@
 @layer base {
   /* Fluid, Responsive Root Container */
   #root {
-    max-width: 100%;
-    width: min(95vw, 1600px); /* Adaptive max-width for ultra-wide displays */
-    margin: 0 auto;
-    padding: clamp(1rem, 2.5vw, 3rem); /* Responsive padding */
-    text-align: center;
-    background: var(--gradient-bg); /* Subtle radiant white gradient */
-    border-radius: var(--radius);
-    box-shadow: 
-      var(--shadow-elegant),
-      inset 0 0 0 1px hsl(0 0% 100% / 0.1); /* Inner glow border */
-    position: relative;
-    min-height: 100vh;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    font-feature-settings: "liga" 1, "calt" 1; /* Typography ligatures for legal docs */
-  }
+  max-width: 100%;
+  width: 100%; /* ✅ Fix: Let it fully span the viewport width */
+  margin: 0 auto;
+  padding: clamp(1rem, 2.5vw, 3rem); /* You can keep this */
+  text-align: center;
+  background: var(--gradient-bg); /* Subtle radiant white gradient */
+  border-radius: var(--radius, 0); /* ✅ Safe fallback */
+  box-shadow: 
+    var(--shadow-elegant, none),
+    inset 0 0 0 1px hsl(0 0% 100% / 0.1); /* Inner glow border */
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden; /* ✅ Prevent horizontal scroll */
+  font-feature-settings: "liga" 1, "calt" 1; /* Typography ligatures for legal docs */
+}
 
   /* Smooth Theme Transitions */
   html {
