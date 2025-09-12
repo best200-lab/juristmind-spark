@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Home -->
+  <url>
+    <loc>https://www.juristmind.com/</loc>
+    <lastmod>2025-09-11</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://www.juristmind.com/about</loc>
+    <lastmod>2025-09-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Features -->
+  <url>
+    <loc>https://www.juristmind.com/features</loc>
+    <lastmod>2025-09-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.juristmind.com/contact</loc>
+    <lastmod>2025-09-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://www.juristmind.com/blog</loc>
+    <lastmod>2025-09-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://www.juristmind.com/privacy</loc>
+    <lastmod>2025-09-11</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://www.juristmind.com/terms</loc>
+    <lastmod>2025-09-11</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
