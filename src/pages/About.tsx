@@ -41,21 +41,15 @@ const About = () => {
     {
       name: "Oluwaseun Ogun",
       role: "CEO & Founder",
-      description: "Seun Is the founder of Artificial Inteligence And privacy Lawyers, partner with some years of experience in corporate law.",
+      description: "Seun is the founder of Artificial Intelligence and Privacy Lawyers, with years of experience in corporate law and digital transformation.",
       image: "https://pbs.twimg.com/profile_images/1650966849809444868/pyW-YSwK_400x400.jpg"
     },
     {
       name: "Adeniran Samson",
       role: "Co-Founder",
-      description: "Samson is a co founder of Jurist mind and a Diploma law graduate",
+      description: "Samson is a co-founder of Jurist Mind and a Diploma Law graduate passionate about innovation in legal technology.",
       image: "https://pbs.twimg.com/profile_images/1962929871010594816/tw94NciO.jpg"
     },
-    {
-      name: "Emma Rodriguez",
-      role: "Head of Legal Affairs",
-      description: "Former federal judge with expertise in legal compliance and ethics.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face"
-    }
   ];
 
   return (
@@ -75,14 +69,13 @@ const About = () => {
               About JURIST MIND
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 font-universal">
-              Revolutionizing Legal Practice with{" "}
+              Redefining the Future of{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Artificial Intelligence
+                Legal Innovation in Nigeria
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 font-universal">
-              We're on a mission to democratize legal intelligence, making advanced AI-powered 
-              legal research and analysis accessible to every legal professional and law students.
+              At Jurist Mind AI, we are redefining the future of law in Nigeria through the nation’s most advanced AI-powered legal-tech workspace—built to empower every lawyer, law student, and legal professional with speed, accuracy, and intelligence.
             </p>
           </div>
         </div>
@@ -106,33 +99,43 @@ const About = () => {
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* About Jurist Mind AI Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="scroll-reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-universal">
-                Our Story
+                About Jurist Mind AI
               </h2>
-<div className="space-y-6 text-muted-foreground">
-  <p className="font-universal">
-    Jurist Mind began as an experimental project aimed at exploring how <b>AI intersects with law</b> — 
-    from the risks of privacy breaches to the ways AI systems handle user documents. 
-    What started as a learning journey quickly revealed deeper challenges within the legal tech space.
-  </p>
-  <p className="font-universal">
-    As these issues came to light, our mission evolved. Jurist Mind shifted from being just a research 
-    initiative to becoming a <b>solution-driven platform</b> designed to support lawyers and law students. 
-    Our focus is on identifying and closing the loopholes that threaten confidentiality, while building 
-    trust through innovation.
-  </p>
-  <p className="font-universal">
-    Today, Jurist Mind is dedicated to delivering <b>end-to-end AI services</b> with advanced, robust 
-    technology that ensures <b>maximum privacy and security</b>. By doing so, we empower legal professionals 
-    to work smarter, safer, and with greater confidence in the digital age.
-  </p>
-</div>
-
+              <div className="space-y-6 text-muted-foreground font-universal leading-relaxed">
+                <p>
+                  At Jurist Mind AI, we are redefining the future of law in Nigeria through the nation’s most advanced AI-powered legal-tech workspace. Born from a deep commitment to empower Nigerian lawyers, law students, and legal professionals, our platform stands as a groundbreaking force at the intersection of law and technology—delivering unmatched intelligence, efficiency, and precision powered by real-time 2025 data and beyond.
+                </p>
+                <p>
+                  Our mission is simple yet transformative: to bridge the gap between traditional legal practice and cutting-edge innovation. Whether you’re a seasoned attorney managing a demanding caseload, a law student mastering complex concepts, or a firm seeking smarter collaboration, Jurist Mind AI is your trusted partner. Designed exclusively for the Nigerian legal ecosystem, it seamlessly integrates local laws, precedents, and real-world needs into one intelligent workspace—helping every user work faster, think sharper, and connect better.
+                </p>
+                <h3 className="text-2xl font-semibold text-foreground mt-8">Why Jurist Mind AI Leads the Future of Legal Innovation</h3>
+                <ul className="list-disc pl-6 space-y-4">
+                  <li><b>Unmatched Drafting Precision:</b> Our AI drafting system achieves a 99.8% accuracy rate, producing flawless legal documents, contracts, pleadings, and briefs trained on extensive Nigerian datasets and current precedents.</li>
+                  <li><b>Empowering Employment and Networking:</b> Beyond technology, we empower opportunity by connecting legal professionals to jobs, internships, and collaborations in one thriving ecosystem.</li>
+                  <li><b>Real-Time Case Reports:</b> Access and share the latest judgments instantly, including cases that overturn existing precedents, ensuring you stay ahead of every development.</li>
+                  <li><b>Intelligent Legal Diary:</b> Schedule hearings, manage tasks, and track progress with smart reminders and productivity insights—all in one secure workspace.</li>
+                  <li><b>Advanced Case Management:</b> Manage matters through intuitive dashboards that track progress, identify bottlenecks, and optimize resources.</li>
+                  <li><b>Seamless Lawyer–Client Connections:</b> Our algorithm matches clients to lawyers based on expertise, location, and needs—expanding reach and fostering trust.</li>
+                </ul>
+                <p>
+                  What truly sets Jurist Mind AI apart is our holistic vision. We’re not just a tool—we’re a complete ecosystem designed to empower, connect, and elevate the entire Nigerian legal community. From case management and research to collaboration and networking, every feature simplifies your workflow and amplifies your impact.
+                </p>
+                <p>
+                  With real-time access to verified 2025 data, our AI anticipates trends, automates tasks, and delivers actionable insights—saving time, reducing errors, and keeping you ahead of the curve. Security remains our foundation: all user data is fully encrypted and compliant with Nigerian data protection regulations.
+                </p>
+                <p>
+                  Join the growing community of Nigerian lawyers and students transforming their practice with Jurist Mind AI. Whether you’re drafting landmark agreements, analyzing pivotal judgments, or building your career—we’re here to elevate your journey.
+                </p>
+                <p className="italic text-primary">
+                  Discover the power of true legal innovation today at <a href="https://juristmind.com" className="underline">juristmind.com</a>.
+                </p>
+              </div>
             </div>
             <div className="relative scroll-reveal-right">
               <div className="aspect-square bg-gradient-card rounded-2xl p-8 flex items-center justify-center">
@@ -219,8 +222,7 @@ const About = () => {
               Ready to Transform Your Legal Practice?
             </h2>
             <p className="text-xl text-foreground/80 mb-8 max-w-2xl mx-auto font-universal">
-              Join hundreds of legal professionals who are already experiencing 
-              the future of legal AI.
+              Join hundreds of legal professionals already experiencing the future of legal AI with Jurist Mind.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" className="bg-background text-foreground hover:bg-background/90 font-universal">
