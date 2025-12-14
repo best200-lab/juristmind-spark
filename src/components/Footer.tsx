@@ -80,11 +80,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-3 text-white/80">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="font-universal">contact@juristmind.com</span>
+                <span className="font-universal">Juristmindai@gmail.com</span>
               </li>
               <li className="flex items-center space-x-3 text-white/80">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="font-universal">+1 (555) 123-4567</span>
+                <span className="font-universal">+2347031474439</span>
               </li>
               <li className="flex items-center space-x-3 text-white/80">
                 <MapPin className="w-4 h-4 text-primary" />
