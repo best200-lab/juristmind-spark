@@ -10,8 +10,10 @@ const HeroSection = () => {
     <section ref={scrollRef} className="relative min-h-screen bg-glossy-white">
       <div className="container mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
           {/* Content */}
           <div className="space-y-8 scroll-reveal">
+            
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary font-universal">
               <Zap className="w-4 h-4" />
@@ -28,6 +30,7 @@ const HeroSection = () => {
                   MIND
                 </h1>
               </div>
+
               <p className="text-lg md:text-xl text-foreground max-w-2xl leading-relaxed font-universal">
                 Revolutionary <span className="text-primary font-bold">AI-POWERED</span> legal assistant that transforms how legal professionals research, 
                 analyze, and practice law with <span className="text-secondary font-bold">UNPARALLELED INTELLIGENCE</span> and precision.
@@ -42,8 +45,15 @@ const HeroSection = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button variant="outline" size="xl" className="font-universal">
-                Watch Demo
+
+              <Button variant="outline" size="xl" className="font-universal" asChild>
+                <a
+                  href="https://www.mediafire.com/file/6y4aktnw16hk8d0/Jurist_mind_AI_App.apk/file?dkey=c50ymwz389q&r=1230"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download App
+                </a>
               </Button>
             </div>
           </div>
@@ -51,9 +61,9 @@ const HeroSection = () => {
           {/* Professional Image */}
           <div className="relative scroll-reveal-right">
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
-              <img 
-                src={professionalPerson} 
-                alt="Professional legal expert with law books and scales of justice" 
+              <img
+                src={professionalPerson}
+                alt="Professional legal expert with law books and scales of justice"
                 className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
@@ -61,7 +71,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        
         {/* Feature Icons & Stats */}
         <div className="mt-16 space-y-12">
           <div className="flex items-center justify-center gap-8 py-6 scroll-reveal">
@@ -79,7 +88,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Stats with Countdown Animation */}
+          {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto scroll-reveal-scale">
             <div className="text-center">
               <div className="text-4xl font-black text-primary countdown-text font-universal">99.8%</div>
