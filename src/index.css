@@ -595,16 +595,13 @@ All colors MUST be HSL. Creative enhancements include luminous white auras, deep
     transform: scale(1.1);
   }
 
-  /* Animated Red Border Glow - Lightning Effect */
-  @keyframes border-glow-rotate {
+  /* Animated Red Border Glow - Chain Lightning Effect */
+  @keyframes rotate-border {
     0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
+      transform: rotate(0deg);
     }
     100% {
-      background-position: 0% 50%;
+      transform: rotate(360deg);
     }
   }
 
@@ -613,40 +610,39 @@ All colors MUST be HSL. Creative enhancements include luminous white auras, deep
     background: hsl(var(--background));
     border-radius: 9999px;
     z-index: 1;
+    overflow: hidden;
   }
 
   .animated-red-border::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(
-      90deg,
-      hsl(0 84% 60%) 0%,
-      hsl(0 84% 70%) 25%,
-      hsl(0 100% 50%) 50%,
-      hsl(0 84% 70%) 75%,
-      hsl(0 84% 60%) 100%
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 60deg,
+      hsl(0 100% 50%) 90deg,
+      hsl(0 100% 65%) 120deg,
+      hsl(0 100% 50%) 150deg,
+      transparent 180deg,
+      transparent 360deg
     );
-    background-size: 300% 100%;
-    border-radius: 9999px;
-    z-index: -1;
-    animation: border-glow-rotate 2s linear infinite;
-    box-shadow: 
-      0 0 15px hsl(0 84% 60% / 0.6),
-      0 0 30px hsl(0 84% 60% / 0.4),
-      0 0 45px hsl(0 84% 60% / 0.2);
+    transform-origin: center;
+    animation: rotate-border 1.5s linear infinite;
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: -2;
   }
 
   .animated-red-border::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
     background: hsl(var(--background));
     border-radius: 9999px;
     z-index: -1;
