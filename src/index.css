@@ -594,6 +594,63 @@ All colors MUST be HSL. Creative enhancements include luminous white auras, deep
     box-shadow: var(--shadow-elegant), var(--white-glow-outer);
     transform: scale(1.1);
   }
+
+  /* Animated Red Border Glow - Lightning Effect */
+  @keyframes border-glow-rotate {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animated-red-border {
+    position: relative;
+    background: hsl(var(--background));
+    border-radius: 9999px;
+    z-index: 1;
+  }
+
+  .animated-red-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+      90deg,
+      hsl(0 84% 60%) 0%,
+      hsl(0 84% 70%) 25%,
+      hsl(0 100% 50%) 50%,
+      hsl(0 84% 70%) 75%,
+      hsl(0 84% 60%) 100%
+    );
+    background-size: 300% 100%;
+    border-radius: 9999px;
+    z-index: -1;
+    animation: border-glow-rotate 2s linear infinite;
+    box-shadow: 
+      0 0 15px hsl(0 84% 60% / 0.6),
+      0 0 30px hsl(0 84% 60% / 0.4),
+      0 0 45px hsl(0 84% 60% / 0.2);
+  }
+
+  .animated-red-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsl(var(--background));
+    border-radius: 9999px;
+    z-index: -1;
+  }
 }
 
 @keyframes scale-in {
