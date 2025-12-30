@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Lock, Eye, FileText, Users, Settings } from "lucide-react";
 
 const Privacy = () => {
-  const lastUpdated = "January 15, 2024";
+  const lastUpdated = "December 30, 2025";
 
   const sections = [
     {

@@ -95,8 +95,8 @@ const Features = () => {
 
   const pricingPlans = [
     {
-      name: "Starter",
-      price: "$30",
+      name: "Student Plan",
+      price: "N3,000",
       period: "/month",
       description: "Perfect for solo practitioners and small firms",
       features: [
@@ -109,12 +109,12 @@ const Features = () => {
       highlighted: false
     },
     {
-      name: "Professional",
-      price: "$150",
+      name: "Lawyers Plan",
+      price: "N6,000",
       period: "/month",
       description: "Ideal for growing law firms",
       features: [
-        "500 AI research queries per month",
+        "Unlimited AI research queries per month",
         "Advanced legal chat with citations",
         "Premium document templates",
         "Priority support",
