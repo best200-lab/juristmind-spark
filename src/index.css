@@ -597,12 +597,18 @@ All colors MUST be HSL. Creative enhancements include luminous white auras, deep
 
   /* Animated Red Border Glow - Chain Lightning Effect */
   @keyframes rotate-border {
-    0% {
-      transform: rotate(0deg);
+    from {
+      --angle: 0deg;
     }
-    100% {
-      transform: rotate(360deg);
+    to {
+      --angle: 360deg;
     }
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
   }
 
   .animated-red-border {
@@ -610,39 +616,22 @@ All colors MUST be HSL. Creative enhancements include luminous white auras, deep
     background: hsl(var(--background));
     border-radius: 9999px;
     z-index: 1;
-    overflow: hidden;
+    padding: 2px;
+    background: conic-gradient(
+      from var(--angle),
+      transparent 0deg,
+      transparent 300deg,
+      hsl(0 100% 50%) 330deg,
+      hsl(0 100% 70%) 345deg,
+      hsl(0 100% 50%) 360deg
+    );
+    animation: rotate-border 3s linear infinite;
   }
 
   .animated-red-border::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      transparent 60deg,
-      hsl(0 100% 50%) 90deg,
-      hsl(0 100% 65%) 120deg,
-      hsl(0 100% 50%) 150deg,
-      transparent 180deg,
-      transparent 360deg
-    );
-    transform-origin: center;
-    animation: rotate-border 1.5s linear infinite;
-    transform: translate(-50%, -50%) rotate(0deg);
-    z-index: -2;
-  }
-
-  .animated-red-border::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    right: 2px;
-    bottom: 2px;
+    inset: 2px;
     background: hsl(var(--background));
     border-radius: 9999px;
     z-index: -1;
