@@ -98,12 +98,53 @@ export type Database = {
         }
         Relationships: []
       }
+      onboarding: {
+        Row: {
+          created_at: string | null
+          email: string
+          enrolment_number: string
+          firm_name: string
+          full_name: string
+          id: string
+          phone: string
+          status: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          enrolment_number: string
+          firm_name: string
+          full_name: string
+          id?: string
+          phone: string
+          status?: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          enrolment_number?: string
+          firm_name?: string
+          full_name?: string
+          id?: string
+          phone?: string
+          status?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           bio: string | null
           company: string | null
           cover_image_url: string | null
           created_at: string
+          display_name: string | null
+          email: string | null
           facebook_url: string | null
           full_name: string
           github_url: string | null
@@ -115,6 +156,8 @@ export type Database = {
           location: string | null
           profession: string | null
           profile_image_url: string | null
+          role: string | null
+          status: string | null
           twitter_url: string | null
           updated_at: string
           user_id: string
@@ -126,6 +169,8 @@ export type Database = {
           company?: string | null
           cover_image_url?: string | null
           created_at?: string
+          display_name?: string | null
+          email?: string | null
           facebook_url?: string | null
           full_name: string
           github_url?: string | null
@@ -137,6 +182,8 @@ export type Database = {
           location?: string | null
           profession?: string | null
           profile_image_url?: string | null
+          role?: string | null
+          status?: string | null
           twitter_url?: string | null
           updated_at?: string
           user_id: string
@@ -148,6 +195,8 @@ export type Database = {
           company?: string | null
           cover_image_url?: string | null
           created_at?: string
+          display_name?: string | null
+          email?: string | null
           facebook_url?: string | null
           full_name?: string
           github_url?: string | null
@@ -159,6 +208,8 @@ export type Database = {
           location?: string | null
           profession?: string | null
           profile_image_url?: string | null
+          role?: string | null
+          status?: string | null
           twitter_url?: string | null
           updated_at?: string
           user_id?: string
@@ -172,7 +223,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      handle_onboarding: {
+        Args: {
+          p_enrolment_number: string
+          p_firm_name: string
+          p_full_name: string
+          p_phone: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never

@@ -594,6 +594,48 @@ All colors MUST be HSL. Creative enhancements include luminous white auras, deep
     box-shadow: var(--shadow-elegant), var(--white-glow-outer);
     transform: scale(1.1);
   }
+
+  /* Animated Red Border Glow - Chain Lightning Effect */
+  @keyframes rotate-border {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .animated-red-border {
+    position: relative;
+    background: hsl(var(--background));
+    border-radius: 9999px;
+    z-index: 1;
+    padding: 2px;
+    background: conic-gradient(
+      from var(--angle),
+      transparent 0deg,
+      transparent 300deg,
+      hsl(0 100% 50%) 330deg,
+      hsl(0 100% 70%) 345deg,
+      hsl(0 100% 50%) 360deg
+    );
+    animation: rotate-border 3s linear infinite;
+  }
+
+  .animated-red-border::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: hsl(var(--background));
+    border-radius: 9999px;
+    z-index: -1;
+  }
 }
 
 @keyframes scale-in {
