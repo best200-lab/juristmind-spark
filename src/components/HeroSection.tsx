@@ -48,7 +48,7 @@ const HeroSection = () => {
 
               <Button variant="outline" size="xl" className="font-universal" asChild>
                 <a
-                  href="https://www.mediafire.com/file/6y4aktnw16hk8d0/Jurist_mind_AI_App.apk/file?dkey=c50ymwz389q&r=1230"
+                  href="https://phmywmbqvaforkjohoza.supabase.co/storage/v1/object/public/avatars/Jurist%20mind%20AI%20App.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
