@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Scale, Zap } from "lucide-react";
 import professionalPerson from "@/assets/professional-person.png";
@@ -91,7 +92,7 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto scroll-reveal-scale">
             <div className="text-center">
-              <div className="text-4xl font-black text-primary countdown-text font-universal">99.8%</div>
+              <div className="text-4xl font-black text-primary countdown-text font-universal">100%</div>
               <div className="text-sm text-muted-foreground font-medium font-universal">Accuracy Rate</div>
             </div>
             <div className="text-center">
